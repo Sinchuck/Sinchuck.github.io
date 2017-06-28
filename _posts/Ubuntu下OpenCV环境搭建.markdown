@@ -6,7 +6,7 @@
 
 一共有两种方式可以搭建OpenCV环境，支持Python。第一种是通过apt-get直接安装，这种方式比较方便，但版本比较旧。第二种就是通过源码编译安装。下面是详细过程。
 
-##apt-get安装
+## apt-get安装
 打开终端，之后输入下面的命令。
 ```bash
 sudo apt-get install libopencv-dev python-opencv
@@ -18,7 +18,7 @@ sudo apt-get install libopencv-dev python-opencv
 sudo apt-get remove libopencv-dev python-opencv
 ```
 
-##通过源码编译安装
+## 通过源码编译安装
 
 - 安装必要的包
 ```bash
@@ -123,7 +123,7 @@ sudo rm -r /usr/local/include/opencv2 /usr/local/include/opencv /usr/include/ope
 sudo apt-get –purge remove opencv-doc opencv-data python-opencv
 ```
 
-##参考
+## 参考
 - [ubuntu卸载opencv并重装opencv3.0.0](http://milq.github.io/install-opencv-ubuntu-debian/)
 - [Install OpenCV on Ubuntu or Debian](https://www.cnblogs.com/txg198955/p/5990295.html)
 - [Ubuntu 下安装 OpenCV3](http://cuckootan.me/2016/10/01/Linux/Ubuntu%20%E4%B8%8B%E5%AE%89%E8%A3%85%20OpenCV3/)
