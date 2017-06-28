@@ -1,12 +1,14 @@
-﻿# Ubuntu下OpenCV环境搭建
-
-标签（空格分隔）： 环境配置 工业视觉系统
-
+---
+layout: post
+title: Ubuntu下OpenCV环境搭建
+date: 2017-06-28
+tags: 环境配置
 ---
 
 一共有两种方式可以搭建OpenCV环境，支持Python。第一种是通过apt-get直接安装，这种方式比较方便，但版本比较旧。第二种就是通过源码编译安装。下面是详细过程。
 
-##apt-get安装
+## apt-get安装
+
 打开终端，之后输入下面的命令。
 ```bash
 sudo apt-get install libopencv-dev python-opencv
@@ -18,7 +20,7 @@ sudo apt-get install libopencv-dev python-opencv
 sudo apt-get remove libopencv-dev python-opencv
 ```
 
-##通过源码编译安装
+## 通过源码编译安装
 
 - 安装必要的包
 ```bash
@@ -56,15 +58,15 @@ sudo cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPE
 ## 用图形化工具配置生成 makefile
 
 - 切换至 opencv 目录，然后新建一个目录，用于存放 cmake 生成的配置文件。然后切换至 build 目录。
-mkdir build
-cd build
+  mkdir build
+  cd build
 - 再打开一个终端，到 cmake 目录里的 bin 子目录里找到 cmake-gui，然后运行一下命令：
-./cmake-gui
-打开cmake图形化工具。
-然后在 Where is the source code 中添加 opencv 目录的路径，在 where to build the binaries 中添加 build 目录的路径。
+  ./cmake-gui
+  打开cmake图形化工具。
+  然后在 Where is the source code 中添加 opencv 目录的路径，在 where to build the binaries 中添加 build 目录的路径。
 
 - 然后点击下面的 Configure，选择 Unix Makefiles，然后选择 default ...。点击 OK，从而处理 opencv 目录下的 CMakeLists.txt，并在 build 目录下生成 CMakeCache.txt 及 Makefile 等相关文件。
-然后开始进行配置。
+  然后开始进行配置。
 ```
 CMAKE_BUILD_TYPE 设为 RELEASE
 CMAKE_INSTALL_PREFIX 设为 所要安装 OpenCV3 的目录（这里指定为 /usr/local）
@@ -123,7 +125,8 @@ sudo rm -r /usr/local/include/opencv2 /usr/local/include/opencv /usr/include/ope
 sudo apt-get –purge remove opencv-doc opencv-data python-opencv
 ```
 
-##参考
+## 参考
+
 - [ubuntu卸载opencv并重装opencv3.0.0](http://milq.github.io/install-opencv-ubuntu-debian/)
 - [Install OpenCV on Ubuntu or Debian](https://www.cnblogs.com/txg198955/p/5990295.html)
 - [Ubuntu 下安装 OpenCV3](http://cuckootan.me/2016/10/01/Linux/Ubuntu%20%E4%B8%8B%E5%AE%89%E8%A3%85%20OpenCV3/)
